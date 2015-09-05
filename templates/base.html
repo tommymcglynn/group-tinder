@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>Group Tinder</title>
+
+<!--[if (gt IE 8) | (IEMobile)]><!-->
+<link rel="stylesheet" href="./stylesheets/application.css" />
+<!--<![endif]-->
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="./stylesheets/application-ie.css" />
+<![endif]-->
+
+</head>
+<body>
+    <div><h1>{% block title %}{{ section.title }}{% endblock %}</h1></div>
+    <div>{% include "main_nav.html" %}</div>
+    <div>{% include "account.html" %}</div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+{% if form %}
+<form action="/accounts/profile/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% else %}
+<div>
+    <div>Name: {{user.username}}</div>
+    <div>Age: {{person.age}}</div>
+    <div>Gender: {{person.get_gender_display}}</div>
+    <div>Stereotype: {{person.get_stereotype_display}}</div>
+</div>
+<a href="/accounts/profile?edit=true">Edit Profile</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block account %}
+
+{% if user and user.is_active %}
+<a href="/accounts/logout/">Logout</a>
+{% else %}
+<a href="/accounts/login/">Login or Register</a>
+{% endif %}
+
+{% endblock %}
