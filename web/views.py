@@ -5,6 +5,10 @@ from django.template import RequestContext
 from models import Person
 from .forms import PersonForm
 
+def home(request):
+    user = request.user
+    return render_to_response('home.html', {'user': user})
+
 def profile(request):
     if not request.user.is_active:
         return redirect('/accounts/login')

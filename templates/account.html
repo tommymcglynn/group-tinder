@@ -1,9 +1,9 @@
 {% block account %}
 
 {% if user and user.is_active %}
-<a href="/accounts/logout/">Logout</a>
+<a href="/accounts/logout/">Logout {{user.username}}</a>
 {% else %}
-<a href="/accounts/login/">Login or Register</a>
+<a href="/accounts/login/">Login</a> or <a href="/accounts/register/">Register</a>
 {% endif %}
 
 {% endblock %}
