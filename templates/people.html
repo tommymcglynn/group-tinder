@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}People{% endblock %}
+
+{% block content %}
+<div>
+    <div>Name: {{suggested_person.user.username}}</div>
+    <div>Age: {{suggested_person.age}}</div>
+    <div>Gender: {{suggested_person.get_gender_display}}</div>
+    <div>Stereotype: {{suggested_person.get_stereotype_display}}</div>
+    <form action="/people/" method="post" />
+        {% csrf_token %}
+        <div>Would hang with?</div>
+        <input type="hidden" value="{{suggested_person.pk}}" name="person_pk" />
+        <input type="submit" value="Yes" name="yes" />
+        <input type="submit" value="No" name="no" />
+    </form>
+</div>
+{% endblock %}

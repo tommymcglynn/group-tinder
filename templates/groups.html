@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Groups{% endblock %}
+
+{% block content %}
+<div>
+    {% if groups %}
+        <p>These are the groups you have matched with:</p>
+        {% for group in groups %}
+            <div>
+                {% for person in group.people.all %}
+                    {{person.user.username}},
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You haven't matched with any groups. Flip through more people to find a match: <a href="/people/">People</a></p>
+    {% endif %}
+</div>
+{% endblock %}

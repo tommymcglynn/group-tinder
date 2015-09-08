@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^home/', views.home, name='home'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile/', views.profile, name='profile'),
+    url(r'^people/', views.people, name='people'),
+    url(r'^groups/', views.groups, name='groups'),
 ]
